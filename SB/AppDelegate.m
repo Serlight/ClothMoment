@@ -7,8 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import <EaseMob.h>
+#import <Reachability.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
-@interface AppDelegate ()
+
+@interface AppDelegate () <IChatManagerDelegate, CLLocationManagerDelegate>{
+    Reachability *reach;
+    UILabel *_netWorkExceptionLabel;
+}
+@property (nonatomic, strong) CLLocationManager *manager;
 
 @end
 
@@ -16,30 +25,138 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+//    [Fabric with:@[CrashlyticsKit]];
+    _storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    _secondStoryboard = [UIStoryboard storyboardWithName:@"New" bundle:nil];
+    UIColor *navColor = UIColorFromRGB(100, 200, 200);
+    [[UINavigationBar appearance] setBackgroundColor:navColor];
+    [[UINavigationBar appearance] setBarTintColor:navColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:UIColorFromRGB(245, 245, 245), NSForegroundColorAttributeName, [UIFont fontWithName:@ "HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    
+    UIRemoteNotificationType notificationTypes = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
+    
+    _tabbarController = (SBTabBarViewController *)self.window.rootViewController;
+    NSString *apnsCertName = nil;
+#if DEBUG
+    apnsCertName = @"chatdemoui_dev";
+#else
+    apnsCertName = @"chatdemoui";
+#endif
+    [[EaseMob sharedInstance] registerSDKWithAppKey:@"xienb#xienbwebim"
+                                       apnsCertName:apnsCertName];
+    [[EaseMob sharedInstance] application:application
+            didFinishLaunchingWithOptions:launchOptions];
+    
+    reach = [Reachability reachabilityWithHostname:@"www.baidu.com"];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(networkStateChange:)
+                                                 name:@"kReachabilityChangedNotification"
+                                               object:reach];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loginStateChange:)
+                                                 name:KNOTIFICATION_LOGINCHANGE
+                                               object:nil];
+    
+    
+#if DEBUG
+    [[EaseMob sharedInstance] enableUncaughtExceptionHandler];
+#endif
+    [[[EaseMob sharedInstance] chatManager] setAutoFetchBuddyList:YES];
+    [[EaseMob sharedInstance] application:application
+            didFinishLaunchingWithOptions:launchOptions];
+    [[EaseMob sharedInstance].chatManager removeDelegate:self];
+    [[EaseMob sharedInstance].chatManager addDelegate:self
+                                        delegateQueue:nil];
+    [self loginStateChange:nil];
+    [self setupLocationManager];
     return YES;
 }
 
+- (void)setupLocationManager {
+    self.manager = [[CLLocationManager alloc] init];
+    if ([CLLocationManager locationServicesEnabled]) {
+        self.manager.delegate = self;
+        self.manager.distanceFilter = 300;
+        self.manager.desiredAccuracy = kCLLocationAccuracyBest;
+        [self.manager startUpdatingLocation];
+    } else {
+        
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    _currentLocation = locations[0];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[EaseMob sharedInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
++ (instancetype)sharedDelegate {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    [[EaseMob sharedInstance] applicationWillResignActive:application];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[EaseMob sharedInstance] applicationDidEnterBackground:application];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [[EaseMob sharedInstance] applicationWillEnterForeground:application];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[EaseMob sharedInstance] applicationDidBecomeActive:application];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[EaseMob sharedInstance] applicationWillTerminate:application];
+}
+
+- (void)networkStateChange:(NSNotification *) notification {
+    [self showNetWorkExceptionLabel:bNotifyNetWorkException];
+}
+
+- (void)showNetWorkExceptionLabel:(BOOL)bShow
+{
+    if(!_netWorkExceptionLabel){
+        _netWorkExceptionLabel = [UILabel buildNetWorkStatusLabel:NetWorkExceptionPrompt];
+    }
+    _netWorkExceptionLabel.hidden = !bShow;
+}
+
+- (void)loginStateChange:(NSNotification *)notification {
+    BOOL isAutoLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
+    if (!isAutoLogin) {
+        NSUserDefaults *standDefault = [NSUserDefaults standardUserDefaults];
+        NSString *userName;
+        if ([standDefault objectForKey:@"userInfo"]) {
+            userName = [standDefault objectForKey:@"userInfo"][@"logid"];
+        }
+        NSString *password = [standDefault objectForKey:@"password"];
+        if (userName && password) {
+            [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:userName
+                                                                password:password
+                                                              completion:^(NSDictionary *loginInfo, EMError *error) {
+                                                                  nil;
+                                                              } onQueue:nil];
+        }
+    }
+    
+}
+
+- (void)didLoginWithInfo:(NSDictionary *)loginInfo error:(EMError *)error {
+    
+}
+
+- (void)didLoginFromOtherDevice {
+    
 }
 
 @end

@@ -15,17 +15,17 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "86468A1919F92A180018E69F"
-               BuildableName = "SB.app"
+               BuildableName = "&#x5e03;&#x5708;.app"
                BlueprintName = "SB"
                ReferencedContainer = "container:SB.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "86468A3219F92A180018E69F"
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86468A1919F92A180018E69F"
-            BuildableName = "SB.app"
+            BuildableName = "&#x5e03;&#x5708;.app"
             BlueprintName = "SB"
             ReferencedContainer = "container:SB.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86468A1919F92A180018E69F"
-            BuildableName = "SB.app"
+            BuildableName = "&#x5e03;&#x5708;.app"
             BlueprintName = "SB"
             ReferencedContainer = "container:SB.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86468A1919F92A180018E69F"
-            BuildableName = "SB.app"
+            BuildableName = "&#x5e03;&#x5708;.app"
             BlueprintName = "SB"
             ReferencedContainer = "container:SB.xcodeproj">
          </BuildableReference>
@@ -104,7 +104,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Ad-Hoc"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
