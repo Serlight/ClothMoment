@@ -681,8 +681,8 @@
                 <mask key="constraints">
                     <exclude reference="nYc-Kt-ZIt"/>
                     <exclude reference="tiu-LZ-i8O"/>
-                    <exclude reference="kOL-1W-rOG"/>
                     <exclude reference="JCn-wx-RLO"/>
+                    <exclude reference="kOL-1W-rOG"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -693,8 +693,8 @@
                 <mask key="constraints">
                     <include reference="nYc-Kt-ZIt"/>
                     <include reference="tiu-LZ-i8O"/>
-                    <include reference="kOL-1W-rOG"/>
                     <include reference="JCn-wx-RLO"/>
+                    <include reference="kOL-1W-rOG"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="852.5" y="121"/>

@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 #import <EaseMob.h>
 #import <Reachability.h>
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
+//#import <Fabric/Fabric.h>
+//#import <Crashlytics/Crashlytics.h>
 
 
 @interface AppDelegate () <IChatManagerDelegate, CLLocationManagerDelegate>{

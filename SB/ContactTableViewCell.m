@@ -8,7 +8,6 @@
 
 #import "ContactTableViewCell.h"
 #import "Photo.h"
-#import "ShopViewController.h"
 #import "ChatViewController.h"
 
 @implementation ContactTableViewCell

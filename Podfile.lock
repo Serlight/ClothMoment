@@ -1,11 +1,11 @@
 PODS:
   - AFNetworking (2.4.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
+    - AFNetworking/NSURLConnection (= 2.4.1)
+    - AFNetworking/NSURLSession (= 2.4.1)
+    - AFNetworking/Reachability (= 2.4.1)
+    - AFNetworking/Security (= 2.4.1)
+    - AFNetworking/Serialization (= 2.4.1)
+    - AFNetworking/UIKit (= 2.4.1)
   - AFNetworking/NSURLConnection (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -34,7 +34,7 @@ PODS:
   - PSTCollectionView (1.2.3)
   - Reachability (3.2)
   - SDWebImage (3.7.1):
-    - SDWebImage/Core
+    - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
   - SlimeRefresh (0.0.1)
   - SVPullToRefresh (0.4.1)
@@ -82,4 +82,4 @@ SPEC CHECKSUMS:
   WCAlertView: 91e70d413b87d4e97f7c42574ef6a6b46881baf9
   ZCSAvatarCapture: 0ce82a7f03c30c54c4d27abb4f7362ec4a03a3f0
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.35.0

@@ -13,6 +13,7 @@
 #import <SVPullToRefresh.h>
 #import "MomentCollectionViewCell.h"
 #import "PostViewController.h"
+#import "ShopNViewController.h"
 
 
 @interface MomentsViewController () <UIActionSheetDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource> {
@@ -418,6 +419,12 @@
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detail animated:YES];
     self.hidesBottomBarWhenPushed = NO;
+//    ShopNViewController *shop = [[AppDelegate sharedDelegate].storyboard instantiateViewControllerWithIdentifier:@"ShopNViewController"];
+////    NSDictionary *userInfo = [User getUserInfo];
+//    shop.userId = @"15888888888";
+//    self.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:shop animated:YES];
+//    self.hidesBottomBarWhenPushed = NO;
     
 }
 

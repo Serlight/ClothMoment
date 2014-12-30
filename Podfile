@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 pod 'MBProgressHUD', '~> 0.9'
 pod 'Reachability', '~> 3.2'
 pod 'AFNetworking', '~> 2.4.1'

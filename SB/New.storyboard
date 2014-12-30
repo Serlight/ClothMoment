@@ -1138,14 +1138,6 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <connections>
-                        <outlet property="buttonScrollView" destination="1eA-gT-vmN" id="emy-XV-C2f"/>
-                        <outlet property="buyButton" destination="e0g-8M-x3N" id="X6I-MA-lru"/>
-                        <outlet property="buyTableView" destination="2AW-Sm-UFi" id="05l-kK-euQ"/>
-                        <outlet property="supplyButton" destination="bJu-ma-6mt" id="Rix-g9-LL9"/>
-                        <outlet property="supplyTableView" destination="Bvs-lk-V5P" id="3tI-n2-nRc"/>
-                        <outlet property="underLine" destination="OaS-hd-TEI" id="Qau-Gp-Dcw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zF-kA-dhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

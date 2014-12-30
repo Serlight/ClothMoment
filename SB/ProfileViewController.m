@@ -17,6 +17,8 @@
 #import "CreditViewController.h"
 #import "ResponseViewController.h"
 #import "FavoriateViewController.h"
+#import "ShopNViewController.h"
+#import "SettingsTableViewController.h"
 
 
 @interface ProfileViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
@@ -74,7 +76,10 @@
 }
 
 - (void)barbuttonItemTouch:(UIBarButtonItem *)sender {
-    [self performSegueWithIdentifier:@"settings" sender:sender];
+    SettingsTableViewController *settings = [[AppDelegate sharedDelegate].storyboard instantiateViewControllerWithIdentifier:@"SettingsTableViewController"];
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:settings animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,7 +88,8 @@
 }
 
 - (IBAction)shopTouchUpIndside:(id)sender {
-    ShopViewController *shop = [[AppDelegate sharedDelegate].secondStoryboard instantiateViewControllerWithIdentifier:@"ShopViewController"];
+    ShopNViewController *shop = [[AppDelegate sharedDelegate].storyboard
+                                 instantiateViewControllerWithIdentifier:@"ShopNViewController"];
     NSDictionary *userInfo = [User getUserInfo];
     shop.userId = userInfo[@"logid"];
     self.hidesBottomBarWhenPushed = YES;
@@ -125,22 +131,10 @@
     }];
 }
 
-- (IBAction)avatarImageTouch:(id)sender {
-    [self performSegueWithIdentifier:@"detailAvatar" sender:self];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"detailAvatar"]) {
-        ChangeAvatarViewController *avatarViewController = segue.destinationViewController;
-        avatarViewController.avatarString = avatarUrl;
-    } else if ([segue.identifier isEqualToString:@"showShop"]) {
-        ShopViewController *shopViewController = segue.destinationViewController;
-        NSDictionary *userInfo = [User getUserInfo];
-        shopViewController.userId = userInfo[@"logid"];
-    }
-}
-
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex >=2) {
+        return;
+    }
     if (buttonIndex == 0) {
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         imagePicker.delegate = self;

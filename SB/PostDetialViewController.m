@@ -9,8 +9,9 @@
 #import "PostDetialViewController.h"
 #import "Photo.h"
 #import "Moments.h"
-#import "ShopViewController.h"
+#import "ShopNViewController.h"
 #import "ChatViewController.h"
+#import "SignUpViewController.h"
 
 @interface PostDetialViewController () <UIScrollViewDelegate>
 
@@ -34,15 +35,15 @@
         self.navigationItem.title = @"供应详情";
     }
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeBottom;
 //    self.extendedLayoutIncludesOpaqueBars = YES;
-//    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.tabBarController.tabBar.hidden = YES;
+//    self.tabBarController.tabBar.hidden = YES;
     self.postDetail.editable = NO;
-    [self showHudInView:self.view hint:@"加载数据中"];
+    [self showHudInView:self.view hint:@"加载数据"];
     if ([_postType isEqualToString:@"sell"]) {
         _buyView.hidden = YES;
         [Moments getMomentInfo:_postId
@@ -116,9 +117,12 @@
 }
 
 - (IBAction)enterShopTouch:(id)sender {
-    ShopViewController *shop = [[AppDelegate sharedDelegate].secondStoryboard instantiateViewControllerWithIdentifier:@"ShopViewController"];
+    ShopNViewController *shop = [[AppDelegate sharedDelegate].storyboard instantiateViewControllerWithIdentifier:@"ShopNViewController"];
     shop.userId = _postInfo[@"publisher"];
-    [self.navigationController pushViewController:shop animated:YES];
+    [self presentViewController:shop animated:YES completion:^{
+        nil;
+    }];
+    
 }
 
 - (IBAction)favorite:(id)sender {
@@ -130,13 +134,9 @@
 }
 
 - (IBAction)sendMessage:(id)sender {
-//    ChatViewController *chatView = [[AppDelegate sharedDelegate].storyboard instantiateViewControllerWithIdentifier:@"ChatViewController"];
-//    [chatView transData:_postInfo[@"phone"] isGroup:NO];
-//    chatView.title = _postInfo[@"contact"];
-//    self.navigationController.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:chatView animated:YES];
-    ChatViewController *chatView = [[AppDelegate sharedDelegate].storyboard instantiateViewControllerWithIdentifier:@"ChatViewController"];
-    [self.navigationController setHidesBottomBarWhenPushed:YES];
+    ChatViewController *chatView = [[ChatViewController alloc] initWithChatter:_postInfo[@"phone"] isGroup:NO];
+    chatView.title = _postInfo[@"contact"];
+    self.navigationController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chatView animated:YES];
 }
 

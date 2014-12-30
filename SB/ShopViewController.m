@@ -49,24 +49,24 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.tabBarController.tabBar setHidden:YES];
+//    [self.tabBarController.tabBar setHidden:YES];
     [self showHudInView:self.view hint:@"加载数据"];
-//    [Shop getShopInfo:_userId
-//                block:^(ResponseType responseType, id responseObj) {
-//                    [self hideHud];
-//                    _nameLabel.text = responseObj[@"name"];
-//                    _companyLabel.text = responseObj[@"companyName"];
-//                    supplyArray = responseObj[@"supplyList"];
-//                    buyArray = responseObj[@"purchaseList"];
-//                    [_supplyTableView reloadData];
-//                    [_buyTableView reloadData];
-//                    [Photo retrievePhoto:responseObj[@"profile_url"]
-//                                callback:^(UIImage *image) {
-//                                    if (image) {
-//                                        _avatarImageView.image = image;
-//                                    }
-//                                }];
-//                }];
+    [Shop getShopInfo:_userId
+                block:^(ResponseType responseType, id responseObj) {
+                    [self hideHud];
+                    _nameLabel.text = responseObj[@"name"];
+                    _companyLabel.text = responseObj[@"companyName"];
+                    supplyArray = responseObj[@"supplyList"];
+                    buyArray = responseObj[@"purchaseList"];
+                    [_supplyTableView reloadData];
+                    [_buyTableView reloadData];
+                    [Photo retrievePhoto:responseObj[@"profile_url"]
+                                callback:^(UIImage *image) {
+                                    if (image) {
+                                        _avatarImageView.image = image;
+                                    }
+                                }];
+                }];
 }
 
 - (void)viewWillLayoutSubviews {

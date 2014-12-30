@@ -12,7 +12,7 @@
 #import "ContactTableViewCell.h"
 #import "ChatViewController.h"
 #import "User.h"
-#import "ShopViewController.h"
+#import "ShopNViewController.h"
 #import "AddFriendViewController.h"
 
 
@@ -197,7 +197,7 @@ static UILocalizedIndexedCollation *theCollation;
 }
 
 - (void)pushToShopViewController:(NSDictionary *)contactInfo {
-    ShopViewController *shop = [[AppDelegate sharedDelegate].secondStoryboard instantiateViewControllerWithIdentifier:@"ShopViewController"];
+    ShopNViewController *shop = [[AppDelegate sharedDelegate].storyboard instantiateViewControllerWithIdentifier:@"ShopNViewController"];
     self.hidesBottomBarWhenPushed = YES;
     shop.userId = contactInfo[@"logid"];
     [self.navigationController pushViewController:shop  animated:YES];

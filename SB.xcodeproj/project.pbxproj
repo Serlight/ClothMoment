@@ -34,7 +34,6 @@
 		865B16BD1A2E0A3E004857CD /* ClothTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B16BC1A2E0A3E004857CD /* ClothTypeViewController.m */; };
 		86654F841A090B83000DFEE1 /* Moments.m in Sources */ = {isa = PBXBuildFile; fileRef = 86654F831A090B83000DFEE1 /* Moments.m */; };
 		86654F871A093736000DFEE1 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86654F861A093736000DFEE1 /* SettingsTableViewController.m */; };
-		86654F921A0B9F06000DFEE1 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86654F911A0B9F06000DFEE1 /* ShopViewController.m */; };
 		86654F981A0BA52E000DFEE1 /* UpdateProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86654F971A0BA52E000DFEE1 /* UpdateProfileTableViewController.m */; };
 		86654F9E1A0BC615000DFEE1 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86654F9D1A0BC615000DFEE1 /* ResetPasswordViewController.m */; };
 		86654FA21A0BC63D000DFEE1 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86654FA01A0BC63D000DFEE1 /* ProfileTableViewCell.m */; };
@@ -46,6 +45,7 @@
 		868AD9C21A06223D00887CB4 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 868AD9C11A06223D00887CB4 /* Photo.m */; };
 		868AD9C41A06235800887CB4 /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 868AD9C31A06235800887CB4 /* image.jpeg */; };
 		869A1E651A30CA2800D7F970 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 869A1E641A30CA2800D7F970 /* Contact.m */; };
+		86AA72601A52E6C3007102BE /* ShopNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AA725F1A52E6C3007102BE /* ShopNViewController.m */; };
 		86B16ED11A1BA325006C963A /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B16ECF1A1BA325006C963A /* PostViewController.m */; };
 		86B16ED21A1BA325006C963A /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B16ED01A1BA325006C963A /* PostViewController.xib */; };
 		86BDE2781A34B90100AC8C79 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BDE2771A34B90100AC8C79 /* NSDate+Category.m */; };
@@ -59,8 +59,6 @@
 		86CE530F1A4DB35C009243FA /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE530D1A4DB35C009243FA /* FriendTableViewCell.m */; };
 		86CE53101A4DB35C009243FA /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CE530E1A4DB35C009243FA /* FriendTableViewCell.xib */; };
 		86CE53131A4DC710009243FA /* FavoriateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CE53121A4DC710009243FA /* FavoriateViewController.m */; };
-		86CE53171A4DDF34009243FA /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CE53151A4DDF34009243FA /* Crashlytics.framework */; };
-		86CE53181A4DDF34009243FA /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CE53161A4DDF34009243FA /* Fabric.framework */; };
 		86CE531A1A4EB01B009243FA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CE53191A4EB01B009243FA /* CoreLocation.framework */; };
 		86D2FB601A0149E20084ADFA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2FB5F1A0149E20084ADFA /* User.m */; };
 		86D2FB631A014B320084ADFA /* SBTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2FB621A014B320084ADFA /* SBTabBarViewController.m */; };
@@ -182,8 +180,6 @@
 		86654F831A090B83000DFEE1 /* Moments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Moments.m; sourceTree = "<group>"; };
 		86654F851A093736000DFEE1 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		86654F861A093736000DFEE1 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
-		86654F901A0B9F06000DFEE1 /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
-		86654F911A0B9F06000DFEE1 /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
 		86654F961A0BA52E000DFEE1 /* UpdateProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateProfileTableViewController.h; sourceTree = "<group>"; };
 		86654F971A0BA52E000DFEE1 /* UpdateProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateProfileTableViewController.m; sourceTree = "<group>"; };
 		86654F9C1A0BC615000DFEE1 /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
@@ -204,6 +200,8 @@
 		868AD9C31A06235800887CB4 /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpeg; sourceTree = "<group>"; };
 		869A1E631A30CA2800D7F970 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		869A1E641A30CA2800D7F970 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		86AA725E1A52E6C3007102BE /* ShopNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopNViewController.h; sourceTree = "<group>"; };
+		86AA725F1A52E6C3007102BE /* ShopNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopNViewController.m; sourceTree = "<group>"; };
 		86B16ECE1A1BA325006C963A /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		86B16ECF1A1BA325006C963A /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
 		86B16ED01A1BA325006C963A /* PostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
@@ -226,8 +224,6 @@
 		86CE530E1A4DB35C009243FA /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		86CE53111A4DC710009243FA /* FavoriateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriateViewController.h; sourceTree = "<group>"; };
 		86CE53121A4DC710009243FA /* FavoriateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriateViewController.m; sourceTree = "<group>"; };
-		86CE53151A4DDF34009243FA /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		86CE53161A4DDF34009243FA /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		86CE53191A4EB01B009243FA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		86D2FB5E1A0149E20084ADFA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		86D2FB5F1A0149E20084ADFA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -352,11 +348,9 @@
 			files = (
 				86CE531A1A4EB01B009243FA /* CoreLocation.framework in Frameworks */,
 				86F3C4DC1A34384E00AF8F91 /* Foundation.framework in Frameworks */,
-				86CE53171A4DDF34009243FA /* Crashlytics.framework in Frameworks */,
 				86F3C4DA1A34383100AF8F91 /* UIKit.framework in Frameworks */,
 				86582A5E1A18D28600045458 /* CoreData.framework in Frameworks */,
 				2F66E92A96A45265E8DBB419 /* libPods.a in Frameworks */,
-				86CE53181A4DDF34009243FA /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,8 +376,6 @@
 		8606C32E1A2AC89A00B352A9 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				86CE53151A4DDF34009243FA /* Crashlytics.framework */,
-				86CE53161A4DDF34009243FA /* Fabric.framework */,
 				86DD732A1A47D1F300B2B722 /* RealtimeSearchUtil.h */,
 				86DD732B1A47D1F300B2B722 /* RealtimeSearchUtil.m */,
 				86DD73231A47D18800B2B722 /* Emoji */,
@@ -829,8 +821,6 @@
 		86FBDF011A0F393900476402 /* shop */ = {
 			isa = PBXGroup;
 			children = (
-				86654F901A0B9F06000DFEE1 /* ShopViewController.h */,
-				86654F911A0B9F06000DFEE1 /* ShopViewController.m */,
 				86FBDF021A0F395C00476402 /* ShopTableViewCell.h */,
 				86FBDF031A0F395C00476402 /* ShopTableViewCell.m */,
 				86FBDF041A0F395C00476402 /* ShopTableViewCell.xib */,
@@ -842,6 +832,8 @@
 				86DD732D1A48505B00B2B722 /* SBImageCollectionView.h */,
 				86DD732E1A48505B00B2B722 /* SBImageCollectionView.m */,
 				86DD732F1A48505B00B2B722 /* SBImageCollectionView.xib */,
+				86AA725E1A52E6C3007102BE /* ShopNViewController.h */,
+				86AA725F1A52E6C3007102BE /* ShopNViewController.m */,
 			);
 			name = shop;
 			sourceTree = "<group>";
@@ -870,7 +862,6 @@
 				86468A1719F92A180018E69F /* Frameworks */,
 				86468A1819F92A180018E69F /* Resources */,
 				2A725E53601BD6A7660DC62C /* Copy Pods Resources */,
-				86CE53141A4DDECB009243FA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -986,19 +977,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		86CE53141A4DDECB009243FA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 8cc13767533092b7f1129ad59d5e6ddb320c7654 97f362b8677f47a34dee0bd59858bb742623556f7b8fafdae3b02327fbfd384c";
-		};
 		D6B8D2928703242374EE0E14 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1046,7 +1024,6 @@
 				865B16BD1A2E0A3E004857CD /* ClothTypeViewController.m in Sources */,
 				86E229581A4D9CDC00579444 /* Utils.m in Sources */,
 				86DD72C31A47CAE400B2B722 /* ChatViewController.m in Sources */,
-				86654F921A0B9F06000DFEE1 /* ShopViewController.m in Sources */,
 				86DD73041A47CAE400B2B722 /* MessageReadManager.m in Sources */,
 				86DD72FE1A47CAE400B2B722 /* EMChatTimeCell.m in Sources */,
 				86CE53131A4DC710009243FA /* FavoriateViewController.m in Sources */,
@@ -1096,6 +1073,7 @@
 				86468A5019F957650018E69F /* UserHeaderCell.m in Sources */,
 				86DD72FB1A47CAE400B2B722 /* EMChatTextBubbleView.m in Sources */,
 				868AD9AF1A06037A00887CB4 /* MomentsViewController.m in Sources */,
+				86AA72601A52E6C3007102BE /* ShopNViewController.m in Sources */,
 				86DD731A1A47CC7000B2B722 /* BaseTableViewCell.m in Sources */,
 				86DD72C61A47CAE400B2B722 /* LocationViewController.m in Sources */,
 				86DD731E1A47CC7000B2B722 /* BaseViewController.m in Sources */,
@@ -1249,7 +1227,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SB/3rdparty/UMeng",
 				);
-				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
+				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = "布圈";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1275,6 +1253,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SB/3rdparty/UMeng",
 				);
+				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = "布圈";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1370,6 +1349,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SB/3rdparty/UMeng",
 				);
+				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_NAME = "布圈";
 				PROVISIONING_PROFILE = "";
 			};
