@@ -32,7 +32,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _userId = @"15888888888";
     supplyArray = [NSArray array];
     buyArray = [NSArray array];
     [self configTableView];
@@ -57,7 +56,7 @@
     _bottomScrollView.contentSize = CGSizeMake(ScreenWidth * 2, 100);
     
     [_bottomScrollView addSubview:_supplyTableView];
-    [_bottomScrollView addSubview:_buyTableView];
+//    [_bottomScrollView addSubview:_buyTableView];
     _bottomScrollView.backgroundColor = [UIColor redColor];
     UINib *nib = [UINib nibWithNibName:@"ShopTableViewCell" bundle:nil];
     [_supplyTableView registerNib:nib forCellReuseIdentifier:@"shopCell"];

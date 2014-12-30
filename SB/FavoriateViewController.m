@@ -28,6 +28,7 @@
     [_supplyTableView registerNib:nib forCellReuseIdentifier:@"shopCell"];
     [_buyTableView registerNib:nib forCellReuseIdentifier:@"shopCell"];
     UIView *emptyView = [UIView buildEmptyTableView:@"没有相关信息" withFrame:_supplyTableView.frame];
+    [_buyTableView removeFromSuperview];
     _supplyTableView.nxEV_emptyView = emptyView;
     _supplyTableView.nxEV_hideSeparatorLinesWhenShowingEmptyView = YES;
     
@@ -133,6 +134,8 @@
         _underLine.centerX = ScreenWidth / 4;
         _bottomScrollView.contentOffset = CGPointMake(0, 0);
     } else {
+        [_bottomScrollView addSubview:_buyTableView];
+        [_buyTableView reloadData];
         [_buyButton setTitleColor:UIColorFromRGB(0, 200, 200) forState:UIControlStateNormal];
         [_supplyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _underLine.centerX = ScreenWidth / 4 * 3;
